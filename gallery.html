@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Interests</title>
+	<style>
+		#header {
+			background-image: url('images/food.jpg');
+			background-size: cover;
+			background-position: center;
+			color: #FFF;
+			font-size: 1.5em;
+			text-align: center;
+			text-shadow: 0px 0px 10px #000;
+			height: 150px;
+			line-height: 150px;
+		}
+
+		#navbar, #navbar ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		#navbar {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			background-color: darkred;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			/*z-index: 1;*/
+		}
+		#navbar li {
+			background-color: #900;
+			width: 180px;
+			text-align: center;
+			position: relative;
+		}
+		#navbar li:hover {
+			background-color: #FC0;
+		}
+		#navbar a {
+			text-decoration: none;
+			color: #FFF;
+			display: block;
+			height: 50px;
+			line-height: 50px;
+		}
+		#navbar ul {
+			position: absolute;
+			display: none;
+		}
+		#navbar ul ul {
+			left: 180px;
+			top: 0px;
+		}
+		#navbar li:hover > ul {
+			display: block;
+		}
+		#navbar a:hover, #navbar #active-menu {
+			border-bottom: 2px solid white;
+		}
+
+
+		.body_background {
+			background-color: black;
+			width: auto;
+			height: auto;
+		}
+		.boxing {
+			display: flex;
+			flex-direction: row;
+			margin-left: 180px;
+			margin-right: 100px;
+			width: 1100px;
+			height: auto;
+			background-color: white;
+			background-position: center;
+		}
+		/* FOOD IMAGES */
+		#borscht {
+			width: 250px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 30px;
+			margin-bottom: 15px;
+		}
+		#caviar {
+			width: 260px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 30px;
+			margin-bottom: 15px;
+		}
+		#vinegret {
+			width: 210px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 30px;
+			margin-bottom: 15px;
+		}
+		#pelmeni {
+			width: 250px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 30px;
+			margin-bottom: 15px;
+		}
+		/* ROW 2 */
+		#baranka {
+			width: 250px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		#pirog {
+			width: 240px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		#zefir {
+			width: 240px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		#kurnik {
+			width: 240px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		/* ROW 3 */
+		#oladyi {
+			width: 250px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+		#shashlyk {
+			width: 240px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+		#kvass {
+			width: 220px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+		#kompot {
+			width: 260px;
+			height: auto;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+		#caption {
+			color: #FFF;
+			background-color: #000;
+
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			text-align: center;
+			margin: 0;
+			padding-top: 100px;
+
+			/*opacity: 0.6;*/
+
+			background-color: rgba(0, 0, 0, 0.6);
+			visibility: hidden;
+		}
+		.container:hover #caption {
+			visibility: visible;
+		}
+		.container {
+			background-color: #CCC;	
+			overflow: hidden;
+			position: relative;
+		}
+		#footer1 {
+			background-size: cover;
+			background-position: center;
+			background-color: black;
+			font-size: 1.5em;
+			height: 30px;
+			line-height: 30px;
+		}
+		#footer2 {
+			background-size: cover;
+			background-position: center;
+			background-color: ghostwhite;
+			font-size: 1.5em;
+			height: 30px;
+			line-height: 30px;
+		}
+		#footer3 {
+			background-size: cover;
+			background-position: center;
+			background-color: black;
+			font-size: 1.5em;
+			height: 30px;
+			line-height: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="header">
+		<h1>Russian Food</h1>
+	</div>
+
+	<ul id="navbar">
+
+		<li><a href="main.html">Home</a></li>
+		<li><a id=active-menu href="">Gallery</a></li>
+
+	</ul>
+
+	<div class="body_background">
+		<div class="boxing">
+			<div class=container id=one>
+				<img id="borscht" src="images/borscht.jpg" alt="Borscht">
+				<p id=caption> Borscht </p>
+			</div>
+			<div class=container id=two>
+				<img id="caviar" src="images/caviar.jpg" alt="Caviar">
+				<p id=caption> Caviar </p>
+			</div>
+			<div class=container id=three>
+				<img id="vinegret" src="images/vinegret.jpg" alt="Vinegret">
+				<p id=caption> Vinegret </p>
+			</div>
+			<div class=container id=four>
+				<img id="pelmeni" src="images/pelmeni.jpg" alt="Pelmeni">
+				<p id=caption> Pelmeni </p>
+			</div>
+		</div>
+		<div class="boxing">
+			<div class=container id=five>
+				<img id="baranka" src="images/baranka.jpg" alt="Baranka">
+				<p id=caption> Baranka </p>
+			</div>
+			<div class=container id=six>
+				<img id="pirog" src="images/pirog.jpg" alt="Pirog">
+				<p id=caption> Pirog </p>
+			</div>
+			<div class=container id=seven>
+				<img id="zefir" src="images/zefir.jpg" alt="Zefir">
+				<p id=caption> Zefir </p>
+			</div>
+			<div class=container id=eight>
+				<img id="kurnik" src="images/kurnik.jpg" alt="Kurnik">
+				<p id=caption> Borscht </p>
+			</div>
+		</div>
+		<div class="boxing">
+			<div class=container id=nine>
+				<img id="oladyi" src="images/oladyi.jpg" alt="Oladyi">
+				<p id=caption> Oladyi </p>
+			</div>
+			<div class=container id=ten>
+				<img id="shashlyk" src="images/shashlyk.jpg" alt="Shashlyk">
+				<p id=caption> Shashlyk </p>
+			</div>
+			<div class=container id=eleven>
+				<img id="kvass" src="images/kvass.jpg" alt="Kvass">
+				<p id=caption> Kvass </p>
+			</div>
+			<div class=container id=twelve>
+				<img id="kompot" src="images/kompot.jpg" alt="Kompot">
+				<p id=caption> Kompot </p>
+			</div>
+		</div>
+	</div>
+	<div id="footer1"></div>
+	<div id="footer2"></div>
+	<div id="footer3"></div>
+</body>
+</html>
